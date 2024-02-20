@@ -23,3 +23,9 @@ name = [Faker::Sport.unusual_sport, "hostness", "Space"].sample
 end
 
 puts "...created #{Samurai.count} samurais"
+puts "Creating user"
+
+  User.create!(
+    username:
+  )
+end
