@@ -49,7 +49,7 @@ gem "autoprefixer-rails"
 gem "font-awesome-sass", "~> 6.1"
 gem "simple_form", github: "heartcombo/simple_form"
 gem "sassc-rails"
-gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'main' 
+gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'main'
  # Custom gems
 gem "devise"
 
@@ -78,3 +78,5 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
 end
+
+gem "cloudinary"

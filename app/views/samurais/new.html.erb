@@ -1,0 +1,9 @@
+<h1>Your Samurai</h1>
+<%= simple_form_for(restaurant) do |f| %>
+  <%= f.input :name %>
+  <%= f.input :skill %>
+  <%= f.input :description :as => :text %>
+  <%= f.input :price_per_day %>
+  <%= f.input :group_size %>
+  <%= f.submit %>
+<% end %>

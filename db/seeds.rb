@@ -20,7 +20,7 @@ user = User.create!(
 )
 name = [Faker::Sport.unusual_sport, "hostess", "space"].sample
 10.times do
-  Samurai.create!(
+  samurai = Samurai.create!(
     name: name,
     price_per_day: [10000, 20000, 30000, 40000, 50000, 60000, 700000].sample,
     group_size: [100, 200, 300, 400, 500].sample,
@@ -28,6 +28,10 @@ name = [Faker::Sport.unusual_sport, "hostess", "space"].sample
     description: Faker::Quote.famous_last_words,
     user: user
   )
+  url = "https://t3.ftcdn.net/jpg/05/53/06/48/360_F_553064887_1y1LmbleDxEdeOYm0pVGqNzLtnqwcqKq.jpg"
+  file = URI.open(url)
+  samurai.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+  samurai.save
 end
 
 puts "...created #{Samurai.count} samurais"

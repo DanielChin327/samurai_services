@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   # root "posts#index"
 
   resources :samurais, only: [:index, :new, :create, :show] do
-    resources :bookings, only:[:new, :create]
+    resources :bookings, only: [:new, :create]
   end
 
   resources :bookings, only:[:index]
