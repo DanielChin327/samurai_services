@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users #This provides all the routes for the users
   root to: "pages#home"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
@@ -12,9 +12,10 @@ Rails.application.routes.draw do
   # root "posts#index"
 
   resources :samurais, only: [:index, :new, :create, :show] do
-    resources :bookings, only:[:new, :create]
+    resources :bookings, only:[:create]
   end
 
   resources :bookings, only:[:index]
-
+  # This is placed outside of the nested resources because devise_for users above
+  # automatically only allows the logged in users bookings to be viewable.
 end
