@@ -7,3 +7,19 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+puts "Cleaning the DB..."
+Samurai.destroy_all
+puts "Creating samurais..."
+
+name = [Faker::Sport.unusual_sport, "hostness", "Space"].sample
+10.times do
+  Samurai.create!(
+    name: name,
+    price_per_day: [10000, 20000, 30000, 40000, 50000, 60000, 700000].sample,
+    group_size: [100, 200, 300, 400, 500].sample,
+    skill: "#{name} & #{Faker::Esport.game}",
+    description: Faker::Quote.famous_last_words
+  )
+end
+
+puts "...created #{Samurai.count} samurais"
