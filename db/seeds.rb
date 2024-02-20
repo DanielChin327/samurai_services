@@ -9,23 +9,26 @@
 #   end
 puts "Cleaning the DB..."
 Samurai.destroy_all
+User.destroy_all
 puts "Creating samurais..."
 
-name = [Faker::Sport.unusual_sport, "hostness", "Space"].sample
+user = User.create!(
+  username: Faker::Name.male_first_name,
+  region: Faker::Nation.capital_city,
+  email: "kanekoyoshio007@gmail.com",
+  password: "123456"
+)
+name = [Faker::Sport.unusual_sport, "hostess", "space"].sample
 10.times do
   Samurai.create!(
     name: name,
     price_per_day: [10000, 20000, 30000, 40000, 50000, 60000, 700000].sample,
     group_size: [100, 200, 300, 400, 500].sample,
     skill: "#{name} & #{Faker::Esport.game}",
-    description: Faker::Quote.famous_last_words
+    description: Faker::Quote.famous_last_words,
+    user: user
   )
 end
 
 puts "...created #{Samurai.count} samurais"
 puts "Creating user"
-
-  User.create!(
-    username:
-  )
-end
