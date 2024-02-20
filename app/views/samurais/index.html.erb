@@ -1,0 +1,16 @@
+<h1>This is the samurai index page</h1>
+<div class="cards">
+  <% @samurais.each do |samurai| %>
+    <div class="card-trip">
+      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+      <div class="card-trip-infos">
+        <div>
+          <h2><%= "#{samurai.name} Samurai" %></h2>
+          <p><%= samurai.description %></p>
+        </div>
+        <h2 class="card-trip-pricing">£99.99</h2>
+        <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+      </div>
+    </div>
+  <% end %>
+</div>
