@@ -7,8 +7,18 @@
 .card-trip {
   overflow: hidden;
   background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  box-shadow: 0 0 40px rgba(0,0,0,0.2);
+  border-radius: 5%;
+  position: relative;
 }
+
+.card-trip-link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+} 
 
 .card-trip > img {
   height: 200px;
@@ -42,4 +52,9 @@
   right: 16px;
   top: -20px;
   width: 40px;
+}
+
+.info_box {
+  display: flex;
+  flex-direction: column-reverse;
 }

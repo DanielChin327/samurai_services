@@ -1,5 +1,5 @@
 class SamuraisController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:index, :show]
+  skip_before_action :authenticate_user!, only: [:index, :show, :new]
   def index
     @samurais = Samurai.all
   end
@@ -13,6 +13,10 @@ class SamuraisController < ApplicationController
     @samurai.save
     redirect_to samurai_path(@samurai)
   end
+  def show
+    @samurai = Samurai.find(params[:id])
+    @bookings = Booking.new
+  end
 
   private
 
@@ -20,6 +24,4 @@ class SamuraisController < ApplicationController
     params.require(:samurai).permit(:name, :skill, :descrption)
   end
 
-  def show
-  end
 end

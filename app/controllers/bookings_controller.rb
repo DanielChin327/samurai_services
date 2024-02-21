@@ -1,6 +1,8 @@
 class BookingsController < ApplicationController
 
   def index
+    
+    @samurai = Samurai.find(id: params[:id])
     @bookings = Booking.all
   end
 
@@ -11,8 +13,12 @@ class BookingsController < ApplicationController
       redirect_to samurais_path
     else
       render:new
+    end
   end
 
+  private
 
-
+  def bookmark_params
+    params.require(:booking).permit(:start_date, :end_date)
+  end
 end
