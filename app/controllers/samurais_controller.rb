@@ -15,7 +15,7 @@ class SamuraisController < ApplicationController
   end
   def show
     @samurai = Samurai.find(params[:id])
-    @bookings = Booking.new
+    @booking = Booking.new
   end
 
   private

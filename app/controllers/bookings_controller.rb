@@ -5,12 +5,15 @@ class BookingsController < ApplicationController
   end
 
   def create
+    @samurai = Samurai.find(params[:samurai_id])
     @booking = Booking.new(bookmark_params)
+    @booking.user = current_user
+    # @booking.status = "pending"
     @booking.samurai = @samurai
     if @booking.save
-      redirect_to samurais_path
+      redirect_to bookings_path
     else
-      render:new
+      render "samurais/show"
     end
   end
 

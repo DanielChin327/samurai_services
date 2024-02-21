@@ -1,12 +1,29 @@
-<h1>Your Bookings</h1>
 
-<div class="bookings">
+<h1>This is the index for Bookings</h1>
+
+
+
+<h1>Bookings</h1>
+
+<div class="cards">
   <% @bookings.each do |booking| %>
-    <div class="booking">
-      <h2>Samurai: <%= booking.samurai.name %></h2>
-      <p>Skill: <%= booking.samurai.skill %></p>
-      <p>Booked from: <%= booking.start_date %> to <%= booking.end_date %></p>
-      <p>Status: <%= booking.status %></p>
+    <div class="card-trip">
+    <%= cl_image_tag(booking.samurai.photo.key) %>
+      <div class="card-trip-infos">
+        <div>
+          <h2><%="#{booking.samurai.name} booking"%></h2>
+          <p><%= "#{booking.samurai.description}" %></p>
+        </div>
+        <h2 class="card-trip-pricing">
+          <div class = "info_box">
+            <p><i class="fa-solid fa-people-group"></i><%= booking.samurai.group_size %></p>
+            <p><%= "¥#{booking.samurai.price_per_day}" %></p>
+            </div>
+        </h2>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Ii_Naosuke_Portrait_by_Ii_Naoyasu.jpg" class="card-trip-user avatar-bordered" />
+      </div>
     </div>
   <% end %>
 </div>
+
+ <%= link_to "Return Samurais",samurais_path(), class: "btn btn-success",id:"button" , style: "margin-top: 30px;"%>
