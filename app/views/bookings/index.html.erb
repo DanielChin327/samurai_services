@@ -26,16 +26,14 @@
 
 
 
-<div class="cards">
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
-    Breakfast
-  </div>
+<h1>Your Bookings</h1>
 
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/lunch.jpg)">
-    Lunch
-  </div>
-
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/dinner.jpg)">
-    Dinner
-  </div>
+<div class="bookings">
+  <% @bookings.each do |booking| %>
+    <div class="booking">
+      <h2>Samurai: <%= booking.samurai.name %></h2>
+      <p>Skill: <%= booking.samurai.skill %></p>
+      <p>Booked from: <%= booking.start_date %> to <%= booking.end_date %></p>
+    </div>
+  <% end %>
 </div>
