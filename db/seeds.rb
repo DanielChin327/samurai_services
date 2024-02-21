@@ -37,12 +37,9 @@ user = User.create!(
   samurai.save
 end
 
-
 puts "...created #{Samurai.count} samurais"
 puts "Creating user"
 puts "Creating booking"
-
-
 
 
 4.times do
