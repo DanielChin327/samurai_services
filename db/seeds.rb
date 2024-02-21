@@ -19,8 +19,10 @@ user = User.create!(
   email: "kanekoyoshio007@gmail.com",
   password: "123456"
 )
-name = [Faker::Sport.unusual_sport, "hostess", "space"].sample
-10.times do
+
+21.times do
+  name = [Faker::Sport.unusual_sport, "Hostess", "Space", "Baby-Sitting", "Chef", "Choir", "Coding", "Doctor","Comedian", "Tutor"].sample
+
   samurai = Samurai.create!(
     name: name,
     price_per_day: [10000, 20000, 30000, 40000, 50000, 60000, 700000].sample,
@@ -29,7 +31,7 @@ name = [Faker::Sport.unusual_sport, "hostess", "space"].sample
     description: Faker::Quote.famous_last_words,
     user: user
   )
-  url = "https://t3.ftcdn.net/jpg/05/53/06/48/360_F_553064887_1y1LmbleDxEdeOYm0pVGqNzLtnqwcqKq.jpg"
+  url = ["https://t3.ftcdn.net/jpg/05/53/06/48/360_F_553064887_1y1LmbleDxEdeOYm0pVGqNzLtnqwcqKq.jpg","https://cdn.britannica.com/71/196871-050-B8665B11/Samurai-Armour-Kusakabe-Kimbei.jpg","https://image.jimcdn.com/app/cms/image/transf/dimension=1040x10000:format=jpg/path/s2217cd0bb1220415/image/i516497a395e31ec1/version/1692408520/samurai-armour.jpg","https://cdn.thecollector.com/wp-content/uploads/2022/09/samurai-armor-timeline-evolution-japan-history.jpg?width=1400&quality=70","https://cdn.thecollector.com/wp-content/uploads/2022/01/utagawa-tokoyuni-high-ranking-samurai-drawing.jpg?width=1400&quality=55","https://assets.editorial.aetnd.com/uploads/2009/10/samurai-bushido-gettyimages-613479624.jpg","https://wallpapers.com/images/hd/samurai-background-6wdyh7nx8m0vjwb1.jpg"].sample
   file = URI.open(url)
   samurai.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
   samurai.save
@@ -38,6 +40,7 @@ end
 puts "...created #{Samurai.count} samurais"
 puts "Creating user"
 puts "Creating booking"
+
 
 4.times do
   booking = Booking.new(
