@@ -8,6 +8,7 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 puts "Cleaning the DB..."
+Booking.destroy_all
 Samurai.destroy_all
 User.destroy_all
 puts "Creating samurais..."
@@ -36,3 +37,15 @@ end
 
 puts "...created #{Samurai.count} samurais"
 puts "Creating user"
+puts "Creating booking"
+
+4.times do
+  booking = Booking.new(
+    user: user,
+    samurai: Samurai.all.sample,
+    start_date: Faker::Date.between(from: '2024-02-14', to: '2024-02-25'),
+    end_date:Faker::Date.between(from: '2024-02-25', to: '2024-03-27'),
+    status: [true, false].sample
+  )
+  booking.save!
+end
