@@ -1,7 +1,7 @@
 class BookingsController < ApplicationController
 
   def index
-    
+
     @samurai = Samurai.find(id: params[:id])
     @bookings = Booking.all
   end
