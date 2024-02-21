@@ -1,7 +1,8 @@
 class BookingsController < ApplicationController
 
   def index
-    @bookings = Booking.all
+    @bookings = current_user.bookings
+
   end
 
   def create
@@ -11,8 +12,13 @@ class BookingsController < ApplicationController
       redirect_to samurais_path
     else
       render:new
+    end
   end
 
+  private
 
+  def bookmark_params
+    params.require(:booking).permit(:samurai)
+  end
 
 end
