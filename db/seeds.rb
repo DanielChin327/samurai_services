@@ -14,7 +14,7 @@ User.destroy_all
 puts "Creating samurais..."
 
 user = User.create!(
-  username: Faker::Name.male_first_name,
+  username: "Yoshio Kaneko",
   region: Faker::Nation.capital_city,
   email: "kanekoyoshio007@gmail.com",
   password: "123456"
