@@ -45,7 +45,7 @@ puts "Creating booking"
     samurai: Samurai.all.sample,
     start_date: Faker::Date.between(from: '2024-02-14', to: '2024-02-25'),
     end_date:Faker::Date.between(from: '2024-02-25', to: '2024-03-27'),
-    status: [true, false].sample
+    status: ["pending", "approved", "rejected"].sample
   )
   booking.save!
 end
