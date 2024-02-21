@@ -1,8 +1,8 @@
 class BookingsController < ApplicationController
 
   def index
-    @bookings = current_user.bookings
-
+    @samurai = Samurai.find(id: params[:id])
+    @bookings = Booking.all
   end
 
   def create
@@ -18,7 +18,6 @@ class BookingsController < ApplicationController
   private
 
   def bookmark_params
-    params.require(:booking).permit(:samurai)
+    params.require(:booking).permit(:start_date, :end_date)
   end
-
 end
