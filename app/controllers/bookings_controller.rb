@@ -6,7 +6,7 @@ class BookingsController < ApplicationController
 
   def create
     @samurai = Samurai.find(params[:samurai_id])
-    @booking = Booking.new(bookmark_params)
+    @booking = Booking.new(booking_params)
     @booking.user = current_user
     # @booking.status = "pending"
     @booking.samurai = @samurai
@@ -25,7 +25,6 @@ class BookingsController < ApplicationController
       render "samurais/show"
     end
   end
-
 
   private
 

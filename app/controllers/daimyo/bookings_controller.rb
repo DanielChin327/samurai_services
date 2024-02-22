@@ -3,5 +3,5 @@ class Daimyo::BookingsController < ApplicationController
     @bookings = current_user.bookings_as_daimyo
   end
 
- 
+
 end
