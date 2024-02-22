@@ -1,31 +1,4 @@
 <h1> <%="#{current_user.username}'s Bookings"%></h1>
-<% @bookings.each do |booking| %>
-  <div class="card-product">
-    <%= cl_image_tag(booking.samurai.photo.key) %>
-    <div class="card-product-infos booking-card-width">
-      <h2><%="#{booking.samurai.name} samurais"%></h2>
-      <p><%= "#{booking.num_of_days} days" %></p>
-    </div>
-  </div>
-<% end %>
-<!--<div class="cards">
-  <% @bookings.each do |booking| %>
-    <div class="card-trip">
-    <%= cl_image_tag(booking.samurai.photo.key) %>
-      <div class="card-trip-infos">
-        <div>
-          <h2><%="You booked #{booking.samurai.name} samurais"%></h2>
-          <p><%= "Famous Quote: #{booking.samurai.description}" %></p>
-        </div>
-        <h2 class="card-trip-pricing">
-          <div class = "info_box">
-            <p><i class="fa-solid fa-people-group"></i><%= "Size: #{booking.samurai.group_size} "%></p>
-            <p><%= "Price: ¥#{booking.samurai.price_per_day}"%></p>
-            </div>
-        </h2>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Ii_Naosuke_Portrait_by_Ii_Naoyasu.jpg" class="card-trip-user avatar-bordered" />
-      </div>
-    </div>
-  <% end %>
-</div>-->
-<%= link_to "Return",samurais_path(), class: "btn btn-primary",id:"button" , style: "margin-top: 30px; border-radius: 20px"%>
+<%= render "bookings/bookings", bookings: @bookings %>
+<%= link_to "Return",samurais_path(), class: "btn btn-primary", id:"button", style: "margin-top: 30px; border-radius: 20px"%>
+
