@@ -5,3 +5,9 @@ h1{
 .text-container{
   margin: 0 33vh 0;
 }
+
+.truncate{
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
