@@ -1,7 +1,14 @@
-
 <h1> <%="#{current_user.username}'s Bookings"%></h1>
-
-<div class="cards">
+<% @bookings.each do |booking| %>
+  <div class="card-product">
+    <%= cl_image_tag(booking.samurai.photo.key) %>
+    <div class="card-product-infos booking-card-width">
+      <h2><%="#{booking.samurai.name} samurais"%></h2>
+      <p><%= "#{booking.num_of_days} days" %></p>
+    </div>
+  </div>
+<% end %>
+<!--<div class="cards">
   <% @bookings.each do |booking| %>
     <div class="card-trip">
     <%= cl_image_tag(booking.samurai.photo.key) %>
@@ -20,6 +27,5 @@
       </div>
     </div>
   <% end %>
-</div>
-
- <%= link_to "Return",samurais_path(), class: "btn btn-primary",id:"button" , style: "margin-top: 30px; border-radius: 20px"%>
+</div>-->
+<%= link_to "Return",samurais_path(), class: "btn btn-primary",id:"button" , style: "margin-top: 30px; border-radius: 20px"%>
