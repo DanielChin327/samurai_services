@@ -10,9 +10,14 @@ class SamuraisController < ApplicationController
 
   def create
     @samurai = Samurai.new(samurai_params)
-    @samurai.save
+    @samurai.user = current_user
+    if @samurai.save
     redirect_to samurai_path(@samurai)
+    else
+      render :show, status: :unprocessable_entity
+    end
   end
+
   def show
     @samurai = Samurai.find(params[:id])
     @booking = Booking.new
@@ -21,7 +26,7 @@ class SamuraisController < ApplicationController
   private
 
   def samurai_params
-    params.require(:samurai).permit(:name, :skill, :descrption)
+    params.require(:samurai).permit(:photo, :name, :skill, :description, :price_per_day, :group_size)
   end
 
 end
