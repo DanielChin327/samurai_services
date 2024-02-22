@@ -18,25 +18,25 @@
   left: 0;
   bottom: 0;
   width: 100%;
-} 
+}
 
 .card-trip > img {
-  height: 200px;
+  height: 300px;
   width: 100%;
   object-fit: cover;
 }
 
-.card-trip h2 {
-  font-size: 16px;
-  font-weight: bold;
-  margin: 0;
-}
+// .card-trip h2 {
+//   font-size: 16px;
+//   font-weight: bold;
+//   margin: 0;
+// }
 
-.card-trip p {
-  font-size: 12px;
-  opacity: .7;
-  margin: 0;
-}
+// .card-trip p {
+//   font-size: 12px;
+//   opacity: .7;
+//   margin: 0;
+// }
 
 
 .card-trip .card-trip-infos {
@@ -57,4 +57,8 @@
 .info_box {
   display: flex;
   flex-direction: column-reverse;
+}
+
+.samurai-card-width{
+  width: 80%;
 }

@@ -11,9 +11,11 @@
 
   </head>
 
-  <body class = "container mt-2">
+  <body>
     <%= render "shared/navbar" %>
     <%= render "shared/flashes" %>
-    <%= yield %>
+    <div class = "container mt-2">
+      <%= yield %>
+    </div>
   </body>
 </html>
