@@ -22,7 +22,7 @@ user = User.create!(
   password: "123456"
 )
 
-renter = User.create! (
+user2 = User.create! (
   username: "Daniel Chin",
   region: Faker::Nation.capital_city,
   email: "danchin327@gmail.com",
