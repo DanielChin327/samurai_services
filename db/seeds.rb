@@ -23,7 +23,6 @@ user = User.create!(
 )
 
 renter = User.create!(
-
   username: "Daniel Chin",
   region: Faker::Nation.capital_city,
   email: "danchin327@gmail.com",
