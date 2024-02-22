@@ -12,10 +12,16 @@ Rails.application.routes.draw do
   # root "posts#index"
 
   resources :samurais, only: [:index, :new, :create, :show] do
-    resources :bookings, only:[:create]
+    resources :bookings, only: [:create]
   end
 
-  resources :bookings, only:[:index]
+  resources :bookings, only: [:index]
   # This is placed outside of the nested resources because devise_for users above
   # automatically only allows the logged in users bookings to be viewable.
+  namespace :daimyo do
+    resources :bookings, only: :index
+  end
+
+  resources :bookings, only: [:update]
+
 end
