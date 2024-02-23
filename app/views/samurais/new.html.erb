@@ -1,7 +1,7 @@
-<h1>Train a new Samurai</h1>
-
-<%= simple_form_for(@samurai) do |f| %>
-  <%= f.input :name %>
+<div class="text-container">
+  <h1>Train a new Samurai</h1>
+  <%= simple_form_for(@samurai) do |f| %>
+    <%= f.input :name %></p>
   <%= f.input :skill %>
   <%= f.input :description, as: :text %>
   <%= f.input :price_per_day %>
@@ -9,3 +9,4 @@
   <%= f.input :photo, as: :file %>
   <%= f.submit class: 'btn btn-primary' %>
 <% end %>
+</div>

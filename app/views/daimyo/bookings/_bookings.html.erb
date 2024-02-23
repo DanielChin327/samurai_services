@@ -1,19 +1,14 @@
-<div class="cards">
-  <% bookings.each do |booking| %>
-    <div class="card-trip">
+<div class="card-booking-container">
+  <%= link_to "back",samurais_path(), class: "btn btn-primary",id:"button"%>
+  <% @bookings.each do |booking| %>
+    <div class="card-product">
       <%= cl_image_tag(booking.samurai.photo.key) %>
-      <div class="card-trip-infos">
-        <div>
-          <h2><%="Your #{booking.samurai.name} Samurai was booked!"%></h2>
-          <p><%= "Description: #{booking.samurai.description}" %></p>
-        </div>
-        <h2 class="card-trip-pricing">
-          <div class = "info_box">
-            <p><i class="fa-solid fa-people-group"></i><%= "Size: #{booking.samurai.group_size} "%></p>
-            <p><%= "Price: ¥#{booking.samurai.price_per_day}"%></p>
-          </div>
-        </h2>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Ii_Naosuke_Portrait_by_Ii_Naoyasu.jpg" class="card-trip-user avatar-bordered" />
+      <div class="card-product-infos booking-card-width">
+        <h3><%="#{booking.samurai.name} samurais"%></h3>
+        <h4> <%= "Period: #{booking.num_of_days} days" %></h4>
+        <p><%= "Description: #{booking.samurai.description}" %></p>
+      </div>
+      <div>
       </div>
       <%= render "daimyo/bookings/status", booking: booking %>
     </div>
