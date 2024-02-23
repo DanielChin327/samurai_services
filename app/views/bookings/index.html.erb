@@ -6,18 +6,21 @@
   <% @bookings.each do |booking| %>
     <div class="card-product">
       <%= cl_image_tag(booking.samurai.photo.key) %>
-      <div class="card-product-infos booking-card-width">
-        <h3><%="#{booking.samurai.name} samurais"%></h3>
-        <p><%= "Period: #{booking.num_of_days} days" %></p>
-        <p><%= "Description: #{booking.samurai.description}" %></p>
+      <div class="card-product-infos booking-card-width d-flex justify-content-between align-items-center">
+        <div>
+          <h3><%="#{booking.samurai.name} samurais"%></h3>
+          <p><%= "Period: #{booking.num_of_days} days" %></p>
+          <p><%= "Description: #{booking.samurai.description}" %></p>
+        </div>
+        <div>
+          <button type="button" class="btn btn-outline-secondary" disabled>pending</button>
+        </div>
       </div>
       <div>
       </div>
     </div>
   <% end %>
-  <div class="d-flex justify-content-center">
-    <%= link_to "Return",samurais_path(), class: "btn btn-primary",id:"button" , style: "margin-top: 30px; border-radius: 20px"%>
-  </div>
+  <%= link_to "Back",samurais_path(), class: "btn btn-primary",id:"button" , style: "margin-top: 30px; border-radius: 20px"%>
 </div>
 <!--<div class="cards">
   <% @bookings.each do |booking| %>

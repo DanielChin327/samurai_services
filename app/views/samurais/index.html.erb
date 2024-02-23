@@ -1,9 +1,9 @@
 <h1>Here are the Samurais</h1>
-<%= link_to "Create Samurai btn btn-primary", new_samurai_path, class: 'btn btn-primary'%>
+<%= link_to "Create Samurai", new_samurai_path, class: 'btn btn-primary'%>
 <div class="cards">
   <% @samurais.each do |samurai| %>
     <div class="card-trip">
-    <%= cl_image_tag(samurai.photo.key) %>
+      <%= cl_image_tag(samurai.photo.key) %>
       <div class="card-trip-infos">
         <div class="samurai-card-width">
           <h3><%="#{samurai.name} Samurai"%></h3>
@@ -13,9 +13,11 @@
           <div class = "info_box">
             <p><i class="fa-solid fa-people-group me-2"></i><%= samurai.group_size %></p>
             <p><%= "¥#{samurai.price_per_day}" %></p>
-            </div>
+          </div>
         </h3>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Ii_Naosuke_Portrait_by_Ii_Naoyasu.jpg" class="card-trip-user avatar-bordered" />
+        <div class="card-trip-user d-flex justify-content-between align-items-end">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Ii_Naosuke_Portrait_by_Ii_Naoyasu.jpg" class="avatar-bordered" />
+        </div>
       </div>
       <%= link_to "",samurai_path(samurai),class: 'card-trip-link'%>
     </div>

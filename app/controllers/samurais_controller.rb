@@ -2,6 +2,7 @@ class SamuraisController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show, :new]
   def index
     @samurais = Samurai.all
+    @users = User.all
   end
 
   def new
