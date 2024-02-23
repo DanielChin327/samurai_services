@@ -8,5 +8,7 @@
       <%= f.input :status, as: :hidden, input_html: { value: 'rejected'} %>
       <%= f.submit 'Reject', class: 'btn btn-light' %>
     <% end %>
+  <% else %>
+    <p class='booking-tag'><%= booking.status %></p>
   <% end %>
 </div>
