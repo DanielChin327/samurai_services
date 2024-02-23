@@ -61,7 +61,7 @@ space_samurai.photo.attach(io: space_file, filename: "space_samurai", content_ty
 french_samurai = Samurai.create(name: "French",
 price_per_day: [10000, 20000, 30000, 40000, 50000, 60000, 700000].sample,
 group_size: [100, 200, 300, 400, 500].sample,
-skill: "Being charming af",
+skill: "Being bilingual.",
 description: "They prefer wine to sake.",
 user:user1)
 french_url = "https://res.cloudinary.com/dugz7wqhz/image/upload/v1708651471/samurai/68c2f7e8-796a-4013-aa11-ec87fe8d10bc_j3rnaw.webp"
@@ -72,7 +72,7 @@ cheerleader_samurai = Samurai.create(name: "Cheerleader",
 price_per_day: [10000, 20000, 30000, 40000, 50000, 60000, 700000].sample,
 group_size: [100, 200, 300, 400, 500].sample,
 skill: "Cheerleading",
-description: "Gung Ho",
+description: "Gung Ho!",
 user:user1)
 cheerleader_url = "https://res.cloudinary.com/dugz7wqhz/image/upload/v1708651714/samurai/b2786a9e-bba8-4e44-b16e-296439750d3b_s0wmbg.webp"
 cheerleader_file = URI.open(cheerleader_url)
@@ -107,8 +107,6 @@ user:user1)
 cowboy_url = "https://res.cloudinary.com/dugz7wqhz/image/upload/v1708651365/samurai/6b9886b1-6b97-4292-adc7-7553992de19a_couap7.webp"
 cowboy_file = URI.open(cowboy_url)
 cowboy_samurai.photo.attach(io: cowboy_file, filename: "cowboy_samurai", content_type: "image/webp")
-
-
 
 yoga_samurai = Samurai.create(name: "Yoga",
 price_per_day: [10000, 20000, 30000, 40000, 50000, 60000, 700000].sample,
@@ -230,16 +228,16 @@ daycare_url = "https://res.cloudinary.com/dugz7wqhz/image/upload/v1708520305/sam
 daycare_file = URI.open(daycare_url)
 daycare_samurai.photo.attach(io: daycare_file, filename: "daycare_samurai", content_type: "image/webp")
 
-3.times do
-  booking = Booking.new(
-    user: user2,
-    samurai: Samurai.all.sample,
-    start_date: Faker::Date.between(from: '2024-02-14', to: '2024-02-25'),
-    end_date:Faker::Date.between(from: '2024-02-25', to: '2024-03-27'),
-    status: ["pending", "approved", "rejected"].sample
-  )
-  booking.save!
-end
+# 3.times do
+#   booking = Booking.new(
+#     user: user2,
+#     samurai: Samurai.all.sample,
+#     start_date: Faker::Date.between(from: '2024-02-14', to: '2024-02-25'),
+#     end_date:Faker::Date.between(from: '2024-02-25', to: '2024-03-27'),
+#     status: ["pending", "approved", "rejected"].sample
+#   )
+#   booking.save!
+# end
 
 puts "...created #{Samurai.count} samurais"
 puts "Creating user"

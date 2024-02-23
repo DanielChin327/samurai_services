@@ -1,19 +1,18 @@
 <h1 class = "samurais-title">Here are the Samurais</h1>
-<div class="row justify-content-center search-box">
-  <div class="col-sm-8 my-3">
-    <%= form_with url: samurais_path, method: :get, class: "d-flex" do %>
+<div class="d-flex justify-content-center search-box">
+  <div class="col-lg-8">
+    <%= form_with url: samurais_path, method: :get, class: "d-flex justify-content-center py-5" do %>
       <%= text_field_tag :query,
             params[:query],
-            class: "form-control",
+            class: "form-control w-50",
             placeholder: "Type a keyword"
         %>
-      <%= submit_tag "Search", name: "", class: "btn btn-secondary" %>
-      <%= link_to "Show All", samurais_path, class: "btn btn-info" %>
+      <div class="d-flex justify-content-between px-3 gap-3">
+       <%= submit_tag "Search", name: "", class: "btn btn-primary" %>
+      <%= link_to "Show All", samurais_path, class: "btn btn-secondary" %>
+      </div>
     <% end %>
   </div>
-</div>
-<div class = "parent-container">
-<%= link_to "Assemble a New Samurai", new_samurai_path, class: 'btn btn-primary rounded-pill samurai-button'%>
 </div>
 <div class="cards">
   <% @samurais.each do |samurai| %>
@@ -31,6 +30,7 @@
           </div>
         </h3>
         <div class="card-trip-user d-flex justify-content-between align-items-end">
+          <p><%= "#{samurai.user.username}" %></p>
           <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Ii_Naosuke_Portrait_by_Ii_Naoyasu.jpg" class="avatar-bordered" />
         </div>
       </div>
