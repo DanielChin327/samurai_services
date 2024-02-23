@@ -2,6 +2,7 @@
 </div>
 <div class= "text-container">
   <div class = "d-flex justify-content-between align-items-end">
+
     <h1><%="#{@samurai.name} Samurai"%></h1>
     <div class = "d-flex justify-content-center">
       <p class = "pb-4"><i class="fa-solid fa-people-group"></i><%= @samurai.group_size %></p>
@@ -13,6 +14,8 @@
     <p><%= @samurai.skill %></p>
     <h3>Description:</h3>
     <p><%= @samurai.description %></p>
+
   </div>
+  <h2 class ="booking-header">Book this Samurai</h2>
   <%= render "samurais/form" %>
 </div>

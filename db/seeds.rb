@@ -58,15 +58,25 @@ space_url = "https://res.cloudinary.com/dugz7wqhz/image/upload/v1708515282/samur
 space_file = URI.open(space_url)
 space_samurai.photo.attach(io: space_file, filename: "space_samurai", content_type: "image/webp")
 
-yoga_samurai = Samurai.create(name: "Yoga",
+french_samurai = Samurai.create(name: "French",
 price_per_day: [10000, 20000, 30000, 40000, 50000, 60000, 700000].sample,
 group_size: [100, 200, 300, 400, 500].sample,
-skill: "Yoga for all ages",
-description: "Come for the yoga. Stay for the kombucha.",
+skill: "Being charming af",
+description: "They prefer wine to sake.",
 user:user1)
-yoga_url = "https://res.cloudinary.com/dugz7wqhz/image/upload/v1708519808/samurai/f179dafa-18a4-477f-b336-1672fbe1f4ae_se3qei.webp"
-yoga_file = URI.open(yoga_url)
-yoga_samurai.photo.attach(io: yoga_file, filename: "yoga_samurai", content_type: "image/webp")
+french_url = "https://res.cloudinary.com/dugz7wqhz/image/upload/v1708651471/samurai/68c2f7e8-796a-4013-aa11-ec87fe8d10bc_j3rnaw.webp"
+french_file = URI.open(french_url)
+french_samurai.photo.attach(io: french_file, filename: "french_samurai", content_type: "image/webp")
+
+cheerleader_samurai = Samurai.create(name: "Cheerleader",
+price_per_day: [10000, 20000, 30000, 40000, 50000, 60000, 700000].sample,
+group_size: [100, 200, 300, 400, 500].sample,
+skill: "Cheerleading",
+description: "Gung Ho",
+user:user1)
+cheerleader_url = "https://res.cloudinary.com/dugz7wqhz/image/upload/v1708651714/samurai/b2786a9e-bba8-4e44-b16e-296439750d3b_s0wmbg.webp"
+cheerleader_file = URI.open(cheerleader_url)
+cheerleader_samurai.photo.attach(io: cheerleader_file, filename: "cheerleader_samurai", content_type: "image/webp")
 
 boyfriend_samurai = Samurai.create(name: "Boyfriend",
 price_per_day: [10000, 20000, 30000, 40000, 50000, 60000, 700000].sample,
@@ -77,6 +87,38 @@ user:user1)
 boyfriend_url = "https://res.cloudinary.com/dugz7wqhz/image/upload/v1708514673/samurai/c8b5c96b-7f1b-4763-87c3-87e4a151e8c9_o2o4qy.webp"
 boyfriend_file = URI.open(boyfriend_url)
 boyfriend_samurai.photo.attach(io: boyfriend_file, filename: "boyfriend_samurai", content_type: "image/webp")
+
+movie_director_samurai = Samurai.create(name: "Movie Director",
+price_per_day: [10000, 20000, 30000, 40000, 50000, 60000, 700000].sample,
+group_size: [100, 200, 300, 400, 500].sample,
+skill: "Directing Movies",
+description: "Annnd cut! (with a katana)",
+user:user1)
+movie_director_url = "https://res.cloudinary.com/dugz7wqhz/image/upload/v1708645871/samurai/b181ca44-da26-417e-a767-c541f4bd71df_zugzno.webp"
+movie_director_file = URI.open(movie_director_url)
+movie_director_samurai.photo.attach(io: movie_director_file, filename: "movie_director_samurai", content_type: "image/webp")
+
+cowboy_samurai = Samurai.create(name: "Cowboy",
+price_per_day: [10000, 20000, 30000, 40000, 50000, 60000, 700000].sample,
+group_size: [100, 200, 300, 400, 500].sample,
+skill: "Rodeo",
+description: "From riding horses to using a rifle, samurai skills are surprisingly very transferable to cowboys.",
+user:user1)
+cowboy_url = "https://res.cloudinary.com/dugz7wqhz/image/upload/v1708651365/samurai/6b9886b1-6b97-4292-adc7-7553992de19a_couap7.webp"
+cowboy_file = URI.open(cowboy_url)
+cowboy_samurai.photo.attach(io: cowboy_file, filename: "cowboy_samurai", content_type: "image/webp")
+
+
+
+yoga_samurai = Samurai.create(name: "Yoga",
+price_per_day: [10000, 20000, 30000, 40000, 50000, 60000, 700000].sample,
+group_size: [100, 200, 300, 400, 500].sample,
+skill: "Yoga for all ages",
+description: "Come for the yoga. Stay for the kombucha.",
+user:user1)
+yoga_url = "https://res.cloudinary.com/dugz7wqhz/image/upload/v1708519808/samurai/f179dafa-18a4-477f-b336-1672fbe1f4ae_se3qei.webp"
+yoga_file = URI.open(yoga_url)
+yoga_samurai.photo.attach(io: yoga_file, filename: "yoga_samurai", content_type: "image/webp")
 
 drive_samurai = Samurai.create(name: "Driving",
 price_per_day: [10000, 20000, 30000, 40000, 50000, 60000, 700000].sample,
@@ -108,6 +150,16 @@ surfing_url = "https://res.cloudinary.com/dugz7wqhz/image/upload/v1708514457/sam
 surfing_file = URI.open(surfing_url)
 surfing_samurai.photo.attach(io: surfing_file, filename: "surfing_samurai", content_type: "image/webp")
 
+rapper_samurai = Samurai.create(name: "Rapper",
+price_per_day: [10000, 20000, 30000, 40000, 50000, 60000, 700000].sample,
+group_size: [100, 200, 300, 400, 500].sample,
+skill: "Rapping",
+description: "Has a mean flow.",
+user:user1)
+rapper_url = "https://res.cloudinary.com/dugz7wqhz/image/upload/v1708646019/samurai/c29b0420-6bda-4537-8d14-e6c00644d605_qsukr4.webp"
+rapper_file = URI.open(rapper_url)
+rapper_samurai.photo.attach(io: rapper_file, filename: "rapper_samurai", content_type: "image/webp")
+
 photography_samurai = Samurai.create(name: "Photography",
 price_per_day: [10000, 20000, 30000, 40000, 50000, 60000, 700000].sample,
 group_size: [100, 200, 300, 400, 500].sample,
@@ -117,6 +169,16 @@ user:user1)
 photography_url = "https://res.cloudinary.com/dugz7wqhz/image/upload/v1708514401/samurai/0a4c9f2a-1b8c-4f34-a22b-97df5e42dd08_hhplgj.webp"
 photography_file = URI.open(photography_url)
 photography_samurai.photo.attach(io: photography_file, filename: "photography_samurai", content_type: "image/webp")
+
+clown_samurai = Samurai.create(name: "Clown",
+price_per_day: [10000, 20000, 30000, 40000, 50000, 60000, 700000].sample,
+group_size: [100, 200, 300, 400, 500].sample,
+skill: "Entertaining(?)",
+description: "Takes clowning deadly seriously.",
+user:user1)
+clown_url = "https://res.cloudinary.com/dugz7wqhz/image/upload/v1708646142/samurai/651677bf-b20f-4afa-8225-9b7770eb7398_xy761j.webp"
+clown_file = URI.open(clown_url)
+clown_samurai.photo.attach(io: clown_file, filename: "clown_samurai", content_type: "image/webp")
 
 therapy_samurai = Samurai.create(name: "Therapy",
 price_per_day: [10000, 20000, 30000, 40000, 50000, 60000, 700000].sample,
@@ -168,13 +230,6 @@ daycare_url = "https://res.cloudinary.com/dugz7wqhz/image/upload/v1708520305/sam
 daycare_file = URI.open(daycare_url)
 daycare_samurai.photo.attach(io: daycare_file, filename: "daycare_samurai", content_type: "image/webp")
 
-
-
-puts "...created #{Samurai.count} samurais"
-puts "Creating user"
-puts "Creating booking"
-
-
 3.times do
   booking = Booking.new(
     user: user2,
@@ -185,3 +240,7 @@ puts "Creating booking"
   )
   booking.save!
 end
+
+puts "...created #{Samurai.count} samurais"
+puts "Creating user"
+puts "Creating booking"
