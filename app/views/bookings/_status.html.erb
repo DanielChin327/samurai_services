@@ -1,12 +1,12 @@
 <div class="d-flex">
-  <% if booking.status == 'pending' %>
+  <% if current_user == booking.samurai.user && booking.status == 'pending' %>
     <%= simple_form_for booking do |f| %>
       <%= f.input :status, as: :hidden, input_html: { value: 'approved'} %>
-      <%= f.submit 'Accept', class: 'btn btn-info' %>
+      <%= f.submit 'Accept', class: 'btn btn-primary' %>
     <% end %>
     <%= simple_form_for booking do |f| %>
       <%= f.input :status, as: :hidden, input_html: { value: 'rejected'} %>
-      <%= f.submit 'Reject', class: 'btn btn-light' %>
+      <%= f.submit 'Reject', class: 'btn btn-secondary' %>
     <% end %>
   <% else %>
     <p class='booking-tag'><%= booking.status %></p>
