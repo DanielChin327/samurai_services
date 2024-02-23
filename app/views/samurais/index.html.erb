@@ -1,5 +1,24 @@
-<h1>Here are the Samurais</h1>
-<%= link_to "Create Samurai btn btn-primary", new_samurai_path, class: 'btn btn-primary'%>
+
+<h1 class = "samurais-title">Here are the Samurais</h1>
+
+<div class="row justify-content-center search-box">
+  <div class="col-sm-8 my-3">
+    <%= form_with url: samurais_path, method: :get, class: "d-flex" do %>
+      <%= text_field_tag :query,
+            params[:query],
+            class: "form-control",
+            placeholder: "Type a keyword"
+        %>
+      <%= submit_tag "Search", name: "", class: "btn btn-secondary" %>
+      <%= link_to "Show All", samurais_path, class: "btn btn-info" %>
+    <% end %>
+  </div>
+</div>
+
+
+<div class = "parent-container">
+<%= link_to "Assemble a New Samurai", new_samurai_path, class: 'btn btn-primary rounded-pill samurai-button'%>
+</div>
 <div class="cards">
   <% @samurais.each do |samurai| %>
     <div class="card-trip">
