@@ -1,0 +1,11 @@
+.parent-container {
+  display: flex;
+  justify-content: center; // Center items horizontally in the container
+  align-items: center; // Center items vertically in the container
+
+  .samurai-button {
+    margin: 10px 20px 30px 40px;
+    // Flex properties removed to prevent stretching
+    // Additional styles for .samurai-button can go here
+  }
+}

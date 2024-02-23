@@ -2,7 +2,9 @@ class SamuraisController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show, :new]
   def index
     @samurais = Samurai.all
-    @users = User.all
+    if params[:query].present?
+      @samurais = @samurais.where("name ILIKE ?", "%#{params[:query]}%")
+    end
   end
 
   def new
